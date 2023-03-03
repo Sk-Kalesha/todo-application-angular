@@ -12,12 +12,13 @@ import { faTrashAlt } from '@fortawesome/free-regular-svg-icons';
 export class AppComponent implements OnInit{
   title = 'todo-application';
   newTodo:string;
-  faTrashAlt = faTrashAlt;    
+  faTrashAlt = faTrashAlt;  
+  todoStorage:Todos[];  
   todoData = localStorage.getItem("todoStorage");
-  todoStorage:Todos[];
+  
 
   constructor(){
-    if (this.todoData === null) {
+    if (this.todoData == null) {
         this.todoStorage = [];
         
     }else{
